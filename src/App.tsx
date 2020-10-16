@@ -1,5 +1,4 @@
 import React from "react";
-import "asdad";
 
 function App() {
   return (
