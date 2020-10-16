@@ -1,12 +1,11 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es6: true,
   },
   extends: [
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'airbnb',
     'plugin:prettier/recommended'
   ],
   parser: '@typescript-eslint/parser',
@@ -14,7 +13,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 12,
+    ecmaVersion: 2018,
     sourceType: 'module',
   },
   plugins: [
