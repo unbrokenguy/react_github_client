@@ -1,9 +1,10 @@
 import React from "react";
+import Routing from "./pages/routing";
 
-const App: React.FunctionComponent = (): JSX.Element => {
+const App = () => {
   return (
     <div className="App">
-      <h1>Hello world!</h1>
+      <Routing/>
     </div>
   );
 };
