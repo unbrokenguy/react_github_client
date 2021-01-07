@@ -1,10 +1,10 @@
 import React from "react";
-import "./index.scss"
+import "./index.scss";
 
 const HomePage = () => (
-    <div className="home-page">
-        <p>home page</p>
-    </div>
+  <div className="home-page">
+    <p>home page</p>
+  </div>
 );
 
 export default HomePage;
