@@ -1,13 +1,13 @@
 import React from "react";
-import "./index.scss"
-import UserInfo from "../../features/user-info"
+import "./index.scss";
+import UserInfo from "../../features/user-info";
 
 function Profile() {
-    return (
+  return (
     <div className="profile">
-        <UserInfo/>
+      <UserInfo />
     </div>
-    )
-};
+  );
+}
 
 export default Profile;
