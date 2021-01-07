@@ -1,12 +1,12 @@
 import React from "react";
-import "./index.scss"
+import "./index.scss";
 
 function SignUpPage() {
-    return(
+  return (
     <div className="sign-up-page">
-        <p>sign up</p>
+      <p>sign up</p>
     </div>
-    )
-};
+  );
+}
 
 export default SignUpPage;

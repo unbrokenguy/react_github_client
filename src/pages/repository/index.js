@@ -1,13 +1,13 @@
 import React from "react";
-import "./index.scss"
-import RepoInfo from "../../features/repository-info"
+import "./index.scss";
+import RepoInfo from "../../features/repository-info";
 
-function RepositoryPage(){
-    return (
+function RepositoryPage() {
+  return (
     <div className="repository-page">
-        <RepoInfo/>
+      <RepoInfo />
     </div>
-    )
-};
+  );
+}
 
 export default RepositoryPage;
