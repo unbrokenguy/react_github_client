@@ -1,16 +1,14 @@
 import React from "react";
 import Routing from "./pages/routing";
 import { ApolloProvider } from "@apollo/client";
-import { client } from "./Apollo";
+import { client } from "./apollo";
 
-const App: React.FunctionComponent = (): JSX.Element => {
+function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="App">
-        <Routing />
-      </div>
+      <Routing />
     </ApolloProvider>
   );
-};
+}
 
 export default App;
