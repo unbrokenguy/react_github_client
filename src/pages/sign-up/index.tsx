@@ -1,12 +1,12 @@
 import React from "react";
 import "./index.scss";
 
-function SignUpPage() {
+const SignUpPage: React.FunctionComponent = () => {
   return (
     <div className="sign-up-page">
       <p>sign up</p>
     </div>
   );
-}
+};
 
 export default SignUpPage;
