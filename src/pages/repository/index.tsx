@@ -1,13 +1,8 @@
 import React from "react";
 import "./index.scss";
-import RepoInfo from "../../features/repository-info";
 
 const RepositoryPage: React.FunctionComponent = () => {
-  return (
-    <div className="repository-page">
-      <RepoInfo />
-    </div>
-  );
+  return <div className="repository-page"></div>;
 };
 
 export default RepositoryPage;
