@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 import "./index.scss";
 import { useQuery } from "@apollo/client";
 import Header from "../../features/header";
+import RingLoader from "react-spinners/RingLoader";
 
 const query = `
 query repoInfo($login: String = "hinagawa") {
@@ -15,16 +16,23 @@ query repoInfo($login: String = "hinagawa") {
 }`;
 const newQuery = gql(query);
 
-const Profile = () => {
-  const { data } = useQuery(newQuery);
-  console.log(newQuery);
+function Profile() {
+  const { data, loading } = useQuery(newQuery);
+  console.log(loading);
   return (
     <div>
       <Header />
-      <h1>UserInfo</h1>
-      <img src={data.user.avatarUrl}></img>
+      {loading ? (
+        <RingLoader size={150} />
+      ) : (
+        <div>
+          <h1>UserInfo</h1>
+          {data.user.login}
+          <img src={data.user.avatarUrl}></img>
+        </div>
+      )}
     </div>
   );
-};
+}
 
 export default Profile;
