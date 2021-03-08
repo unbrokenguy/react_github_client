@@ -4,16 +4,8 @@ import "./index.scss";
 import { useQuery } from "@apollo/client";
 import Header from "../../features/header";
 import RingLoader from "react-spinners/RingLoader";
+import query from "../../apollo/query";
 
-const query = `
-query repoInfo($login: String = "hinagawa") {
-    user(login: $login) {
-    name,
-    login,
-    avatarUrl
-    
-}
-}`;
 const newQuery = gql(query);
 
 function Profile() {
