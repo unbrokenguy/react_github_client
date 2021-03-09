@@ -4,17 +4,9 @@ import "./index.scss";
 import { useQuery } from "@apollo/client";
 import Header from "../../features/header";
 import RingLoader from "react-spinners/RingLoader";
-import { query } from "../../apollo/user/query";
-import { css } from "@emotion/react";
+import { repoInfo } from "../../apollo/user/query";
 
-const newQuery = gql(query);
-
-const override = css`
-  position: absolute;
-  top: 30%;
-  left:40%;
-`;
-
+const newQuery = gql(repoInfo);
 function Profile() {
   const { data, loading } = useQuery(newQuery);
   return (
@@ -22,14 +14,21 @@ function Profile() {
       <Header />
       {loading ? (
         <RingLoader size={150} css="override" />
-      ) : (P
+      ) : (
         <div>
-          <h1>UserInfo</h1>
-          {data.user.login}
           <img
             src={data.user.avatarUrl}
             className="rounded-circle img_align"
           ></img>
+          <div className="div_align">
+            <h1 className="user_login">{data.user.login}</h1>
+            <h1 className="user_followers">
+              {data.user.followers.totalCount + " followers"}
+            </h1>
+            <h1 className="user_following">
+              {data.user.following.totalCount + " following"}
+            </h1>
+          </div>
         </div>
       )}
     </div>
