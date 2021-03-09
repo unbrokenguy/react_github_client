@@ -11,8 +11,8 @@ const Routing: React.FunctionComponent = () => {
   return (
     <Router>
       <Route path="/" component={HomePage} exact />
-      <Route path="/registr" component={SignUpPage} exact />
-      <Route path="/auth" component={SignInPage} exact />
+      <Route path="/registr" component={SignInPage} exact />
+      <Route path="/auth" component={SignUpPage} exact />
       <Route path="/profile" component={Profile} exact />
       <Route
         path="/repository/:username/:repository"
