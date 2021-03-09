@@ -4,7 +4,7 @@ import "./index.scss";
 import { useQuery } from "@apollo/client";
 import Header from "../../features/header";
 import RingLoader from "react-spinners/RingLoader";
-import { query } from "../../apollo/repo/query";
+import { query } from "../../apollo/user/query";
 
 const newQuery = gql(query);
 

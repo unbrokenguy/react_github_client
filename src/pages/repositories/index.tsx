@@ -5,38 +5,45 @@ import { RouteComponentProps, useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import Header from "../../features/header";
 import RingLoader from "react-spinners/RingLoader";
-import { repo } from "../../apollo/repo-info";
+import {
+  repositories,
+  repositoriesCount,
+} from "../../apollo/repositories/repositories";
 
 type Props = RouteComponentProps<{
   username: string;
   repository: string;
 }>;
 
-const newQuery = gql(repo);
+const newQuery = gql(repositoriesCount);
+const newQuery1 = gql(repositories);
 
-const RepositoryPage = (props: Props) => {
-  const { username, repository } = props.match.params;
+const RepositoriesPage = (props: Props) => {
+  const { username } = props.match.params;
 
   const { data, loading } = useQuery(newQuery, {
     variables: {
-      name: repository,
       owner: username,
     },
   });
+
+  // const { data, loading } = useQuery(newQuery, {
+  //   variables: {
+  //     owner: username,
+  //     count: data.user.repositories.totalCount
+  //   },
+  // });
+
   return (
     <div>
       <Header />
       {loading ? (
         <RingLoader size={150} />
       ) : (
-        <div>
-          <h1>Repository</h1>
-          {data.repository.name}
-          {data.repository.createdAt}
-        </div>
+        <ul className="list-group">{/* {Object.keys()}  */}</ul>
       )}
     </div>
   );
 };
 
-export default RepositoryPage;
+export default RepositoriesPage;
