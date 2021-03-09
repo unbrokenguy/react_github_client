@@ -19,9 +19,25 @@
     padding-left: 5%;
     padding-right: 5%;
 }
-
-@button{
-    margin-top: 50%;
-    color: green;
+.header_align{
+    position: absolute;
+    top:20%;
+    left: 42%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+.sign_up_page{
+    position: absolute;
+    top:20%;
+    left: 15%;
+    width: 70%;
+    height: 90%;
+}
+.checkbox_align{
+    margin-left: 3%;
+    margin-bottom: 10%;
+    margin-top: 3%;
+}
+.link_align{
+    margin-left: 20%;
+    margin-right: 20%;
+}
