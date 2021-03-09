@@ -29,6 +29,13 @@ function Profile() {
               {data.user.following.totalCount + " following"}
             </h1>
           </div>
+          <div className="user_search">
+            <input
+              className="form-control form-control"
+              id="userSearch"
+              placeholder="Find a repository..."
+            />
+          </div>
         </div>
       )}
     </div>

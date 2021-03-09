@@ -1,13 +1,13 @@
 .img_align{
     position: absolute;
-    left:40%;
+    left:45%;
     top:30%;
     width: 10%;
 }
 .div_align{
     position: absolute;
     top: 55%;
-    left:7%;
+    left:12%;
     width: 80%;
 }
 .user_login{
@@ -36,5 +36,11 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: lighter;
     color: gray;
+
+}
+.user_search{
+    position: absolute;
+    top:65%;
+    left: 43%;
 
 }
