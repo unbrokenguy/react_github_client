@@ -33,8 +33,9 @@ const RepositoriesList = (props: Props) => {
         <RingLoader size={150} />
       ) : (
         <div>
+          dsd
           {/* <ul className="list-group">{Object.keys()} </ul> */}
-          {data.user.repositories.totalCount}
+          {data.user.login}
         </div>
       )}
     </div>

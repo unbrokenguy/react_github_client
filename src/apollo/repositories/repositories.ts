@@ -2,7 +2,7 @@ export const repositories = `
 query ($owner: String!, $count: Int!)  {
     user(login: $owner){
       login
-    repositories(first: $count){
+    repositories(last: $count){
       nodes{
         name
         createdAt
