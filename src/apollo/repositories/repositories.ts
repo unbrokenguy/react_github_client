@@ -3,7 +3,9 @@ query ($owner: String!, $count: Int!)  {
     user(login: $owner){
       login
     repositories(last: $count){
+      totalCount
       nodes{
+        id
         name
         createdAt
       }
