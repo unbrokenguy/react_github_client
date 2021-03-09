@@ -19,7 +19,11 @@ const Routing: React.FunctionComponent = () => {
         component={RepositoryPage}
         exact
       />
-      <Route path="/repositories" component={RepositoriesPage} exact />
+      <Route
+        path="/:username/repositories"
+        component={RepositoriesPage}
+        exact
+      />
     </Router>
   );
 };
