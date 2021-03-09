@@ -5,6 +5,7 @@ import { RouteComponentProps, useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import Header from "../../features/header";
 import RingLoader from "react-spinners/RingLoader";
+import List from "../repo-info";
 import { repositories } from "../../apollo/repositories/repositories";
 
 type Props = {
@@ -24,8 +25,6 @@ const RepositoriesList = (props: Props) => {
     },
   });
 
-  console.log(data);
-
   return (
     <div>
       {/* <Header /> */}
@@ -33,8 +32,14 @@ const RepositoriesList = (props: Props) => {
         <RingLoader size={150} />
       ) : (
         <div>
-          {/* <ul className="list-group">{Object.keys()} </ul> */}
-          {data.user.repositories.totalCount}
+          {count !== 0 ? (
+            <List
+              nodes={data.user.repositories.nodes}
+              count={data.user.repositories.totalCount}
+            />
+          ) : (
+            <h1>No repositories</h1>
+          )}
         </div>
       )}
     </div>
