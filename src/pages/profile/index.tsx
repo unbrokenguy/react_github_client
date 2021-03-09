@@ -13,7 +13,9 @@ function Profile() {
     <div>
       <Header />
       {loading ? (
-        <RingLoader size={150} css="override" />
+        <div className="loader_position">
+          <RingLoader size={150} />
+        </div>
       ) : (
         <div>
           <img
