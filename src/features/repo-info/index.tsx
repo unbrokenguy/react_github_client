@@ -7,6 +7,7 @@ import Header from "../header";
 import RingLoader from "react-spinners/RingLoader";
 import { ListTypeNode, ListValueNode } from "graphql";
 import { RepoNode } from "../types";
+import { Link } from "react-router-dom";
 
 type Props = {
   nodes: RepoNode[];
@@ -21,7 +22,10 @@ const List = (props: Props) => {
       {nodes.map((node) => (
         <ul key={node.id}>
           <li>
-            {node.name} and {node.createdAt}
+            <Link to={`/repository/${node.owner.login}/${node.name}`}>
+              {node.name}
+            </Link>
+            and {node.createdAt}
           </li>
         </ul>
       ))}

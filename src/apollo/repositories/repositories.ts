@@ -8,6 +8,9 @@ query ($owner: String!, $count: Int!)  {
         id
         name
         createdAt
+        owner{
+          login
+        }
       }
     }
   }
