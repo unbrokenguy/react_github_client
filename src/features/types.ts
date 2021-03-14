@@ -3,4 +3,7 @@ export interface RepoNode {
     name: string;
     createdAt: Date;
     isPrivate: Boolean;
-}
+    owner: {
+    login: string;
+    }
+    }
