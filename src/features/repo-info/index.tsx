@@ -28,24 +28,23 @@ const List = (props: Props) => {
         <ul key={node.id}>
           <div className="repo-list">
             <li>
-              {node.isPrivate + "\n"}
-              <h1>{node.name + "\n"}</h1>
-              {node.createdAt + "\n"}
+              <h1>
+                <Link to={`/repository/${node.owner.login}/${node.name}`}>
+                  {node.name}
+                </Link>
+              </h1>
+              {node.createdAt}
             </li>
           </div>
-          <li>
-            <Link to={`/repository/${node.owner.login}/${node.name}`}>
-              {node.name}
-            </Link>
-            and {node.createdAt}
-          </li>
         </ul>
       ))}
-      <Buttons
-        nodesPerPage={nodesPerPage}
-        totalNodes={nodes.length}
-        paginate={paginate}
-      />
+      <div className="buttons-align">
+        <Buttons
+          nodesPerPage={nodesPerPage}
+          totalNodes={nodes.length}
+          paginate={paginate}
+        />
+      </div>
     </div>
   );
 };

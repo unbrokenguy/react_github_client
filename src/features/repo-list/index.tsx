@@ -28,7 +28,9 @@ const RepositoriesList = (props: Props) => {
   return (
     <div>
       {loading ? (
-        <RingLoader size={150} />
+        <div className="loader_position">
+          <RingLoader size={150} />
+        </div>
       ) : (
         <div>
           {count !== 0 ? (
