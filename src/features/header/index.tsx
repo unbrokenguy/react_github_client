@@ -13,7 +13,7 @@ const Header: React.FunctionComponent = () => {
       />
       <div className="rectangle"></div>
       <h1 className="logo_header">GC</h1>
-      {<Link to="/profile" className="p_header">username</Link>}
+      {<Link to="/profile" className="p_header"></Link>}
     </div>
   );
 };
