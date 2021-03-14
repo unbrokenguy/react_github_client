@@ -4,6 +4,7 @@ import SignInPage from "./sign-in";
 import Profile from "./profile";
 import RepositoryPage from "./repository";
 import RepositoriesPage from "./repositories";
+import SearchRepository from "./search-repositories";
 
 const Routing: React.FunctionComponent = () => {
   return (
@@ -20,6 +21,7 @@ const Routing: React.FunctionComponent = () => {
         component={RepositoriesPage}
         exact
       />
+      <Route path="/search" component={SearchRepository} exact />
     </Router>
   );
 };
