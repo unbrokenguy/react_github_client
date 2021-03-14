@@ -33,6 +33,11 @@ const RepositoryPage = (props: Props) => {
           <h1>Repository</h1>
           {data.repository.name}
           {data.repository.createdAt}
+          {data.repository.object.entries.map((node) => (
+            <ul key={node.id}>
+              <li>{node.name}</li>
+            </ul>
+          ))}
         </div>
       )}
     </div>
