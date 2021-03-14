@@ -25,7 +25,8 @@ h1{
     color: black;
 }
 .buttons-align{
-    position: fixed;
+    position: absolute;
     top:18%;
     left: 40%;
+    z-index: -1;
 }
