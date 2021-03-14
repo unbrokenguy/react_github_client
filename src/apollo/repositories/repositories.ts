@@ -1,19 +1,19 @@
 export const repositories = `
-query ($owner: String!, $count: Int!)  {
-    user(login: $owner){
-      login
-    repositories(last: $count){
-      totalCount
-      nodes{
-        id
-        name
-        createdAt
-        isPrivate
-
-        
-      }
-    }
-  }
+query ($owner: String!, $count: Int!) {
+user(login: $owner){
+login
+repositories(last: $count){
+totalCount
+nodes{
+id
+name
+createdAt
+owner{
+login
+}
+}
+}
+}
 }`;
 
 export const repositoriesCount = `

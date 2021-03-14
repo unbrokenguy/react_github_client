@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import gql from "graphql-tag";
 import "./index.scss";
 import { RepoNode } from "../types";
+import { Link } from "react-router-dom";
 import Buttons from "../repo-info/buttons";
 
 type Props = {
@@ -18,14 +20,10 @@ const List = (props: Props) => {
   const indexOfFirstNode = indexOfLastNode - nodesPerPage;
   const currentNodes = nodes.slice(indexOfFirstNode, indexOfLastNode);
 
-  const username = localStorage.getItem("username");
   const paginate = (pageNumber: React.SetStateAction<number>) =>
     setCurrentPage(pageNumber);
   return (
     <div>
-      <div className="form-align">
-        <input className="form-control" placeholder="Search on page"></input>
-      </div>
       {currentNodes.map((node) => (
         <ul key={node.id}>
           <div className="repo-list">
@@ -35,15 +33,19 @@ const List = (props: Props) => {
               {node.createdAt + "\n"}
             </li>
           </div>
+          <li>
+            <Link to={`/repository/${node.owner.login}/${node.name}`}>
+              {node.name}
+            </Link>
+            and {node.createdAt}
+          </li>
         </ul>
       ))}
-      <div className="buttons-align">
-        <Buttons
-          nodesPerPage={nodesPerPage}
-          totalNodes={nodes.length}
-          paginate={paginate}
-        />
-      </div>
+      <Buttons
+        nodesPerPage={nodesPerPage}
+        totalNodes={nodes.length}
+        paginate={paginate}
+      />
     </div>
   );
 };
