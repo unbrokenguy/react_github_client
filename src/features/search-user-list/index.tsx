@@ -3,7 +3,7 @@ import gql from "graphql-tag";
 import { RouteComponentProps, useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import RingLoader from "react-spinners/RingLoader";
-import List from "../repo-info";
+import ListUsers from "../user-info";
 import { searchRepositories } from "../../apollo/repositories/repositories";
 
 type Props = {
@@ -13,7 +13,7 @@ type Props = {
 
 const newQuery = gql(searchRepositories);
 
-const SearchRepositoriesList = (props: Props) => {
+const SearchUsersList = (props: Props) => {
   const { query } = props;
   let { count } = props;
 
@@ -41,7 +41,7 @@ const SearchRepositoriesList = (props: Props) => {
       ) : (
         <div>
           {count !== 0 ? (
-            <List nodes={filteredNodes} count={count} />
+            <ListUsers nodes={filteredNodes} count={count} />
           ) : (
             <h1>No results</h1>
           )}
@@ -51,4 +51,4 @@ const SearchRepositoriesList = (props: Props) => {
   );
 };
 
-export default SearchRepositoriesList;
+export default SearchUsersList;

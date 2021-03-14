@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 import gql from "graphql-tag";
-import "./index.scss";
 import { RouteComponentProps, useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import Header from "../header";
 import RingLoader from "react-spinners/RingLoader";
 import { ListTypeNode, ListValueNode } from "graphql";
-import { RepoNode } from "../types";
+import { UserNode } from "../types";
 import { Link } from "react-router-dom";
 import Buttons from "../buttons";
 
 type Props = {
-  nodes: RepoNode[];
+  nodes: UserNode[];
   count: number;
 };
 
-const List = (props: Props) => {
+const ListUsers = (props: Props) => {
   const { nodes } = props;
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,10 +32,7 @@ const List = (props: Props) => {
       {currentNodes.map((node) => (
         <ul key={node.id}>
           <li>
-            <Link to={`/repository/${node.owner.login}/${node.name}`}>
-              {node.name}
-            </Link>
-            and {node.createdAt}
+            <Link to={`/profile/${node.name}`}>{node.name}</Link>
           </li>
         </ul>
       ))}
@@ -49,4 +45,4 @@ const List = (props: Props) => {
   );
 };
 
-export default List;
+export default ListUsers;
