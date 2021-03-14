@@ -11,6 +11,7 @@ import "firebase/auth";
 
 import history from "../../history";
 
+const username = localStorage.getItem("username");
 const profileQuery = gql(profileInfo);
 
 function Profile() {
@@ -23,7 +24,11 @@ function Profile() {
       console.log(e);
     }
   };
-  const { data, loading } = useQuery(profileQuery);
+  const { data, loading } = useQuery(profileQuery, {
+    variables: {
+      login: username,
+    },
+  });
   return (
     <div>
       <Header />
@@ -46,7 +51,10 @@ function Profile() {
               {data.user.following.totalCount + " following"}
             </h1>
           </div>
-          <Link to="hinagawa/repositories" className="repo-button btn btn-dark">
+          <Link
+            to={`${username}/repositories`}
+            className="repo-button btn btn-dark"
+          >
             View repositories
           </Link>
           <button onClick={signOutHandler} className="sign-out btn btn-dark">
