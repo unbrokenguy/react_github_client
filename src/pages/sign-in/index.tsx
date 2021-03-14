@@ -23,7 +23,6 @@ class SignIn extends React.Component {
           const token = credential.accessToken;
           const additionalUserInfo = result.additionalUserInfo;
           const username = additionalUserInfo.username;
-          console.log(result);
           console.log(token);
           localStorage.setItem("auth-token", token);
           localStorage.setItem("username", username);
