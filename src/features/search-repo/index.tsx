@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/client";
-import SearchRepositoriesList from "../../features/repo-search";
+import SearchRepositoriesList from "../search-repo-list";
 import { searchRepositoriesCount } from "../../apollo/repositories/repositories";
 import RingLoader from "react-spinners/RingLoader";
 
 const newQuery = gql(searchRepositoriesCount);
 
-function SearchBar() {
+function SearchRepo() {
   const [value, setValue] = useState("");
   const [isPressed, setIsPressed] = useState(false);
 
@@ -49,4 +49,4 @@ function SearchBar() {
   );
 }
 
-export default SearchBar;
+export default SearchRepo;

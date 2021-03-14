@@ -7,18 +7,18 @@ import Header from "../../features/header";
 import RingLoader from "react-spinners/RingLoader";
 import List from "../../features/repo-info";
 import { RepoNode } from "../../features/types";
-import SearchRepositoriesList from "../../features/repo-search";
+import SearchRepositoriesList from "../../features/search-repo-list";
 import { searchRepositoriesCount } from "../../apollo/repositories/repositories";
-import SearchBar from "../../features/search/search-bar";
+import SearchRepo from "../../features/search-repo";
 
-const SearchRepository = () => {
+const Search = () => {
   return (
     <div>
       <div className="container searchApp">
-        <SearchBar />
+        <SearchRepo />
       </div>
     </div>
   );
 };
 
-export default SearchRepository;
+export default Search;
