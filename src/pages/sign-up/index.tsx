@@ -1,8 +1,11 @@
 import React from "react";
 import "./index.scss";
-import { Link } from "react-router-dom";
+import { withRouter, Link, Redirect } from "react-router-dom";
 
-const SignUpPage: React.FunctionComponent = () => {
+function SignUp() {
+  // if (currentUser) {
+  //   return <Redirect to="/" />;
+  // } else {
   return (
     <div>
       <h1 className="header_align">Github Client</h1>
@@ -12,19 +15,21 @@ const SignUpPage: React.FunctionComponent = () => {
             <label className="label">Username or email</label>
             <input
               type="email"
+              name="email"
               className="form-control form-control-lg"
               id="InputEmail"
             />
             <label className="label">Password</label>
             <input
               type="password"
+              name="password"
               className="form-control form-control-lg"
               id="InputPassword"
             />
             <Link to="/auth" className="link_align">
               Sign in
             </Link>
-            <button type="button" className="btn btn-success">
+            <button type="submit" className="btn btn-success">
               Sign up
             </button>
           </div>
@@ -32,6 +37,6 @@ const SignUpPage: React.FunctionComponent = () => {
       </div>
     </div>
   );
-};
+}
 
-export default SignUpPage;
+export default SignUp;

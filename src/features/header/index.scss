@@ -12,14 +12,14 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     font-weight: bolder;
-    position: absolute;
+    position: fixed;
     top: 15px;
     font-size: 50px;
 
 }
 .search_input{
     z-index:1;
-    position: absolute;
+    position: fixed;
     top: 4%;
     left: 80px;
     z-index: 3;
@@ -28,7 +28,7 @@
 }
 .p_header{
     color: white;
-    position: absolute;
+    position: fixed;
     right:10%;
     top:5%;
     z-index: 3;

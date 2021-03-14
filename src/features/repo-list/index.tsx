@@ -27,7 +27,6 @@ const RepositoriesList = (props: Props) => {
 
   return (
     <div>
-      {/* <Header /> */}
       {loading ? (
         <RingLoader size={150} />
       ) : (

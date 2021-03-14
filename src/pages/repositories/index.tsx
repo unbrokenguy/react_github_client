@@ -26,9 +26,11 @@ const RepositoriesPage = (props: Props) => {
 
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       {loading ? (
-        <RingLoader size={150} />
+        <div className="loader_position">
+          <RingLoader size={150} />
+        </div>
       ) : (
         <div>
           <RepositoriesList

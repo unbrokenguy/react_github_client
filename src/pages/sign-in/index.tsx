@@ -1,39 +1,45 @@
 import React from "react";
+import firebase from "firebase/app";
+import "firebase/auth";
 import "./index.scss";
-import { Link } from "react-router-dom";
 
-const SignUpPage: React.FunctionComponent = () => {
-  return (
-    <div>
-      <h1 className="header_align">Github Client</h1>
-      <div className="sign_in_page">
-        <form>
-          <div className="mb-3">
-            <label className="label">Username or email</label>
-            <input
-              type="email"
-              className="form-control form-control-lg"
-              id="InputEmail"
-            />
-            <label className="label">Password</label>
-            <input
-              type="password"
-              className="form-control form-control-lg"
-              id="InputPassword"
-            />
-            <input type="checkbox" />
-            <label className="checkbox_align">Remember me</label>
-            <Link to="/auth" className="link_align">
-              Sign in
-            </Link>
-            <button type="button" className="btn btn-success">
-              Sign in
-            </button>
-          </div>
-        </form>
+import { firebaseConfig } from "../../firebase/config";
+import history from "../../history";
+
+class SignIn extends React.Component {
+  componentDidMount() {
+    if (localStorage.getItem("auth-token")) history.push("/profile");
+  }
+
+  signInHandler = async () => {
+    firebase.initializeApp(firebaseConfig);
+    const provider = new firebase.auth.GithubAuthProvider();
+    try {
+      firebase
+        .auth()
+        .signInWithPopup(provider)
+        .then((result) => {
+          const credential = result.credential as firebase.auth.OAuthCredential;
+          const token = credential.accessToken;
+
+          console.log(token);
+          localStorage.setItem("auth-token", token);
+          history.push("/profile");
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  render() {
+    return (
+      <div>
+        <h1 className="text">Github Client</h1>
+        <button onClick={this.signInHandler} className="btn btn-dark">
+          Sign in with Github
+        </button>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
-export default SignUpPage;
+export default SignIn;

@@ -1,14 +1,16 @@
 import React from "react";
 import gql from "graphql-tag";
 import "./index.scss";
+import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import Header from "../../features/header";
 import RingLoader from "react-spinners/RingLoader";
-import { repoInfo } from "../../apollo/user/query";
+import { profileInfo } from "../../apollo/user/query";
 
-const newQuery = gql(repoInfo);
+const profileQuery = gql(profileInfo);
+
 function Profile() {
-  const { data, loading } = useQuery(newQuery);
+  const { data, loading } = useQuery(profileQuery);
   return (
     <div>
       <Header />
@@ -31,13 +33,9 @@ function Profile() {
               {data.user.following.totalCount + " following"}
             </h1>
           </div>
-          <div className="user_search">
-            <input
-              className="form-control form-control"
-              id="userSearch"
-              placeholder="Find a repository..."
-            />
-          </div>
+          <Link to="hinagawa/repositories" className="repo-button btn btn-dark">
+            View repositories
+          </Link>
         </div>
       )}
     </div>

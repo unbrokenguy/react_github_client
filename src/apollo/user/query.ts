@@ -1,4 +1,4 @@
-export const repoInfo = `
+export const profileInfo = `
 query repoInfo($login: String = "hinagawa") {
     user(login: $login) {
     login,
