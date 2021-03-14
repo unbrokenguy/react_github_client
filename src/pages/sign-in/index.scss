@@ -1,39 +1,20 @@
-.label{
+.text{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: gray;
+    font-weight: lighter;
+    color: black;
     top: 15px;
-    font-size: 15px;
+    font-size: 400%;
     margin-top: 15%;
+    position: fixed;
+    left:38%;
+    top:-5%;
 
 }
-
-.mb-3{
-    position: absolute;
-    left: 30%;
-    top: 10%;
-    width: 40%;
-    height: 60%;
-    border: 0.5px solid gray;
-    border-radius: 0.5%;
-    padding-bottom: 15%;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
 button{
-    margin-top: 50%;
-    color: green;
-}
-.header_align{
-    position: absolute;
-    top:20%;
-    left: 42%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.sign_in_page{
-    position: absolute;
-    top:20%;
-    left: 15%;
-    width: 70%;
-    height: 90%;
+    position: fixed;
+    left:43%;
+    top:40%;
+    width: 15%;
+    height: 10%;
+    
 }
