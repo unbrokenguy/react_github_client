@@ -21,10 +21,11 @@ class SignIn extends React.Component {
         .then((result) => {
           const credential = result.credential as firebase.auth.OAuthCredential;
           const token = credential.accessToken;
-
+          console.log(result);
           console.log(token);
           localStorage.setItem("auth-token", token);
           history.push("/profile");
+          location.reload();
         });
     } catch (e) {
       console.log(e);

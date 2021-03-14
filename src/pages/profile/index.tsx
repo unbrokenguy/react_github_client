@@ -7,9 +7,22 @@ import Header from "../../features/header";
 import RingLoader from "react-spinners/RingLoader";
 import { profileInfo } from "../../apollo/user/query";
 
+import "firebase/auth";
+
+import history from "../../history";
+
 const profileQuery = gql(profileInfo);
 
 function Profile() {
+  const signOutHandler = async () => {
+    try {
+      localStorage.clear();
+      history.push("/");
+      location.reload();
+    } catch (e) {
+      console.log(e);
+    }
+  };
   const { data, loading } = useQuery(profileQuery);
   return (
     <div>
@@ -36,6 +49,9 @@ function Profile() {
           <Link to="hinagawa/repositories" className="repo-button btn btn-dark">
             View repositories
           </Link>
+          <button onClick={signOutHandler} className="sign-out btn btn-dark">
+            Sign out
+          </button>
         </div>
       )}
     </div>
