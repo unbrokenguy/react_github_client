@@ -4,6 +4,8 @@ import "./index.scss";
 import { Link } from "react-router-dom";
 
 const Header: React.FunctionComponent = () => {
+  const username = localStorage.getItem("username");
+  console.log(username);
   return (
     <div className="default-header">
       <input
@@ -13,7 +15,11 @@ const Header: React.FunctionComponent = () => {
       />
       <div className="rectangle"></div>
       <h1 className="logo_header">GC</h1>
-      {<Link to="/profile" className="p_header"></Link>}
+      {
+        <Link to="/profile" className="p_header">
+          {username}
+        </Link>
+      }
     </div>
   );
 };

@@ -1,5 +1,5 @@
 export const profileInfo = `
-query repoInfo($login: String = "hinagawa") {
+query repoInfo($login: String!) {
     user(login: $login) {
     login,
     avatarUrl

@@ -6,7 +6,7 @@
     margin-left: auto;
     margin-right: auto;
     position:relative;
-    top:150px;
+    top:200px;
     z-index:-1;
 }
 ul{
@@ -17,8 +17,15 @@ ul{
  
 }
 li{
-    margin:5%;
+    margin-left: 5%;
+    position: relative;
+    margin-top: 2%;
 }
 h1{
     color: black;
+}
+.buttons-align{
+    position: fixed;
+    top:18%;
+    left: 40%;
 }
