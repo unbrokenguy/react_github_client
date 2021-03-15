@@ -26,6 +26,7 @@ function SearchUser() {
   return (
     <div>
       <input
+        className="input-group"
         type="text"
         placeholder="search user.."
         onChange={(event) => setValue(event.target.value)}
@@ -34,7 +35,9 @@ function SearchUser() {
       {isPressed ? (
         <div>
           {loading ? (
-            <RingLoader size={150} />
+            <div className="loader-position">
+              <RingLoader size={150} />
+            </div>
           ) : (
             <SearchUsersList query={value} count={data.search.userCount} />
           )}

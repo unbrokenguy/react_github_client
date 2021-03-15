@@ -37,7 +37,9 @@ const SearchRepositoriesList = (props: Props) => {
   return (
     <div>
       {loading ? (
-        <RingLoader size={150} />
+        <div className="loader-position">
+          <RingLoader size={150} />
+        </div>
       ) : (
         <div>
           {count !== 0 ? (

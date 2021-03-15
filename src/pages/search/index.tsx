@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import "./index.scss";
 import SearchRepo from "../../features/search-repo";
 import SearchUser from "../../features/search-user";
+import Header from "../../features/header";
 
 const Search = () => {
   return (
     <div>
-      <div className="container searchApp">
-        <SearchRepo />
-        <SearchUser />
+      <Header />
+      <div className="posit">
+        <div>
+          <SearchRepo />
+          <SearchUser />
+        </div>
       </div>
     </div>
   );

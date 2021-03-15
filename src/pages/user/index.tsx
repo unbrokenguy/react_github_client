@@ -25,7 +25,9 @@ const UserPage = (props: Props) => {
     <div>
       {/* <Header /> */}
       {loading ? (
-        <RingLoader size={150} />
+        <div className="loader-position">
+          <RingLoader size={150} />
+        </div>
       ) : (
         <div>
           {data !== undefined ? (

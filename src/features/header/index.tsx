@@ -8,13 +8,11 @@ const Header: React.FunctionComponent = () => {
   console.log(username);
   return (
     <div className="default-header">
-      <input
-        id="global_search"
-        className="search_input form-control"
-        placeholder="Global searching"
-      />
+      <Link to="/search">
+        <h1 className="logo_header">GC</h1>
+      </Link>
       <div className="rectangle"></div>
-      <h1 className="logo_header">GC</h1>
+
       {
         <Link to="/profile" className="p_header">
           {username}

@@ -26,6 +26,7 @@ function SearchRepo() {
   return (
     <div>
       <input
+        className="input-group"
         type="text"
         placeholder="search repository.."
         onChange={(event) => setValue(event.target.value)}
@@ -34,7 +35,9 @@ function SearchRepo() {
       {isPressed ? (
         <div>
           {loading ? (
-            <RingLoader size={150} />
+            <div className="loader-position">
+              <RingLoader size={150} />
+            </div>
           ) : (
             <SearchRepositoriesList
               query={value}
