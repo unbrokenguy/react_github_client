@@ -27,7 +27,7 @@ const RepositoryPage = (props: Props) => {
     <div>
       <Header />
       {loading ? (
-        <RingLoader size={150} />
+        <div>loading</div>
       ) : (
         <div className="border-div">
           <h1 className="h1">{data.repository.name}</h1>
