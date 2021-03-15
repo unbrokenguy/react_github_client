@@ -4,6 +4,12 @@ export interface RepoNode {
     createdAt: Date;
     isPrivate: Boolean;
     owner: {
+        login: string;
+    }
+};
+
+export interface UserNode {
+    id: number;
+    name: string;
     login: string;
-    }
-    }
+};

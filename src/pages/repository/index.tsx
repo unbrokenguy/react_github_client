@@ -29,10 +29,14 @@ const RepositoryPage = (props: Props) => {
       {loading ? (
         <RingLoader size={150} />
       ) : (
-        <div>
-          <h1>Repository</h1>
-          {data.repository.name}
-          {data.repository.createdAt}
+        <div className="border-div">
+          <h1 className="h1">{data.repository.name}</h1>
+          <hr></hr>
+          {data.repository.object.entries.map((node) => (
+            <ul className="ul" key={node.id}>
+              <li className="li">{node.name}</li>
+            </ul>
+          ))}
         </div>
       )}
     </div>

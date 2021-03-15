@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import Header from "../../features/header";
 import RingLoader from "react-spinners/RingLoader";
-import { profileInfo } from "../../apollo/user/query";
+import { profileInfo } from "../../apollo/user";
 
 import "firebase/auth";
 
