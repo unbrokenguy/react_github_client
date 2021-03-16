@@ -4,7 +4,6 @@
 - [x] Поиск по пользователям
 - [x] Краткая информация о пользователе
 - [x] Зайти только авторизированный пользователь
-- [x] Обработка ошибок
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
