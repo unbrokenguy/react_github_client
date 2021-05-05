@@ -11,7 +11,6 @@ const Header: React.FunctionComponent = () => {
         <h1 className="logo_header">GC</h1>
       </Link>
       <div className="rectangle"></div>
-
       {
         <Link to="/profile" className="p_header">
           {username}
