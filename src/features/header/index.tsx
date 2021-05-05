@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const Header: React.FunctionComponent = () => {
   const username = localStorage.getItem("username");
-  console.log(username);
   return (
     <div className="default-header">
       <Link to="/search">
